@@ -2,6 +2,8 @@
 Static Website CDK Stack.
 """
 import os
+from typing import List
+
 from aws_cdk import (
     CfnOutput,
     Stack,
@@ -27,6 +29,7 @@ class StaticWebsiteStack(Stack):
         construct_id: str,
         hostedzone_domain_name: str,
         website_subdomain: str,
+        alternative_subdomains: List[str],
         **kwargs,
     ) -> None:
         """
@@ -35,6 +38,7 @@ class StaticWebsiteStack(Stack):
         :param construct_id: ID of stack construct.
         :param hostedzone_domain_name: Domain name of Route 53 hosted zone.
         :param website_subdomain: Subdomain for static website.
+        :param alternative_subdomains: List of alternative subdomains,
         :param kwargs: Extra keyword arguments.
         """
         super().__init__(scope, construct_id, **kwargs)
@@ -47,6 +51,14 @@ class StaticWebsiteStack(Stack):
             website_domain = hostedzone_domain_name
         else:
             website_domain = website_subdomain + "." + hostedzone_domain_name
+        alternative_domains = []
+        for alternative_subdomain in alternative_subdomains:
+            if alternative_subdomain is None or alternative_subdomain == "":
+                alternative_domains.append(hostedzone_domain_name)
+            else:
+                alternative_domains.append(
+                    alternative_subdomain + "." + hostedzone_domain_name
+                )
         # S3 bucket where we store our website's static content.
         # We don't allow public access.
         website_bucket = s3.Bucket(
@@ -62,6 +74,7 @@ class StaticWebsiteStack(Stack):
             domain_name=website_domain,
             hosted_zone=hosted_zone,
             region="us-east-1",
+            subject_alternative_names=alternative_domains,
         )
         # Rewrite blog/example to blog/example/index.html, required for Gatsby.
         # https://github.com/aws-samples/amazon-cloudfront-functions/tree/main/url-rewrite-single-page-apps
@@ -88,7 +101,7 @@ class StaticWebsiteStack(Stack):
                 ],
                 viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
             ),
-            domain_names=[website_domain],
+            domain_names=[website_domain] + alternative_domains,
             minimum_protocol_version=cloudfront.SecurityPolicyProtocol.TLS_V1_2_2021,
         )
         # pylint: enable=too-many-function-args
@@ -101,6 +114,16 @@ class StaticWebsiteStack(Stack):
                 targets.CloudFrontTarget(distribution)
             ),
         )
+        for index, alternative_domain in enumerate(alternative_domains):
+            route53.ARecord(
+                self,
+                f"DomainRecord{index}",
+                zone=hosted_zone,
+                record_name=alternative_domain,
+                target=route53.RecordTarget.from_alias(
+                    targets.CloudFrontTarget(distribution)
+                ),
+            )
         s3deploy.BucketDeployment(
             self,
             "S3Deployment",

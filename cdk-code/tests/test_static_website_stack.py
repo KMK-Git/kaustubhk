@@ -18,6 +18,7 @@ def test_static_website_stack() -> None:
         "StaticWebsiteStack",
         hostedzone_domain_name="example.com",
         website_subdomain="",
+        alternative_subdomains=["www"],
         env=cdk.Environment(account="123456789012", region="ap-south-1"),
     )
     template = assertions.Template.from_stack(stack)
@@ -161,6 +162,7 @@ def test_static_website_stack() -> None:
                 ]
             },
             "DomainName": "example.com",
+            "SubjectAlternativeNames": ["www.example.com"],
             "HostedZoneId": "DUMMY",
             "Region": "us-east-1",
         },
@@ -183,7 +185,7 @@ def test_static_website_stack() -> None:
         "AWS::CloudFront::Distribution",
         {
             "DistributionConfig": {
-                "Aliases": ["example.com"],
+                "Aliases": ["example.com", "www.example.com"],
                 "DefaultCacheBehavior": {
                     "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
                     "Compress": True,
@@ -243,6 +245,26 @@ def test_static_website_stack() -> None:
         "AWS::Route53::RecordSet",
         {
             "Name": "example.com.",
+            "Type": "A",
+            "AliasTarget": {
+                "DNSName": {
+                    "Fn::GetAtt": ["WebsiteDistribution75DCDA0B", "DomainName"]
+                },
+                "HostedZoneId": {
+                    "Fn::FindInMap": [
+                        "AWSCloudFrontPartitionHostedZoneIdMap",
+                        {"Ref": "AWS::Partition"},
+                        "zoneId",
+                    ]
+                },
+            },
+            "HostedZoneId": "DUMMY",
+        },
+    )
+    template.has_resource_properties(
+        "AWS::Route53::RecordSet",
+        {
+            "Name": "www.example.com.",
             "Type": "A",
             "AliasTarget": {
                 "DNSName": {

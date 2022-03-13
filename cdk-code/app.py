@@ -16,7 +16,8 @@ PipelineStack(
         app,
         "StaticWebsiteDeployStage",
         hostedzone_domain_name="kaustubhk.com",
-        website_subdomain="test",
+        website_subdomain="",
+        alternative_subdomains=["www"],
         env=cdk.Environment(
             account=os.environ["CDK_DEFAULT_ACCOUNT"],
             region=os.environ["CDK_DEFAULT_REGION"],

@@ -21,6 +21,7 @@ def test_pipeline_stack() -> None:
             "StaticWebsiteDeployStage",
             hostedzone_domain_name="kaustubhk.com",
             website_subdomain="",
+            alternative_subdomains=["www"],
             env=cdk.Environment(account="123456789012", region="ap-south-1"),
         ),
         env=cdk.Environment(account="123456789012", region="ap-south-1"),
@@ -294,9 +295,7 @@ def test_pipeline_stack() -> None:
                                 "BranchName": "main",
                             },
                             "Name": "KMK-Git_kaustubhk",
-                            "OutputArtifacts": [
-                                {"Name": "KMK_Git_kaustubhk_Source"}
-                            ],
+                            "OutputArtifacts": [{"Name": "KMK_Git_kaustubhk_Source"}],
                             "RoleArn": {
                                 "Fn::GetAtt": [
                                     "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleFA5B98DB",
@@ -322,9 +321,7 @@ def test_pipeline_stack() -> None:
                                     "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
                                 },
                             },
-                            "InputArtifacts": [
-                                {"Name": "KMK_Git_kaustubhk_Source"}
-                            ],
+                            "InputArtifacts": [{"Name": "KMK_Git_kaustubhk_Source"}],
                             "Name": "Synth",
                             "OutputArtifacts": [{"Name": "Synth_Output"}],
                             "RoleArn": {
@@ -673,9 +670,7 @@ def test_pipeline_stack() -> None:
             },
             "PolicyName": "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleDefaultPolicyC34AEB37",
             "Roles": [
-                {
-                    "Ref": "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleFA5B98DB"
-                }
+                {"Ref": "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleFA5B98DB"}
             ],
         },
     )
