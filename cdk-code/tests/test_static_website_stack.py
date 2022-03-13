@@ -17,7 +17,7 @@ def test_static_website_stack() -> None:
         app,
         "StaticWebsiteStack",
         hostedzone_domain_name="example.com",
-        website_subdomain="subdomain",
+        website_subdomain="",
         env=cdk.Environment(account="123456789012", region="ap-south-1"),
     )
     template = assertions.Template.from_stack(stack)
@@ -160,7 +160,7 @@ def test_static_website_stack() -> None:
                     "Arn",
                 ]
             },
-            "DomainName": "subdomain.example.com",
+            "DomainName": "example.com",
             "HostedZoneId": "DUMMY",
             "Region": "us-east-1",
         },
@@ -183,7 +183,7 @@ def test_static_website_stack() -> None:
         "AWS::CloudFront::Distribution",
         {
             "DistributionConfig": {
-                "Aliases": ["subdomain.example.com"],
+                "Aliases": ["example.com"],
                 "DefaultCacheBehavior": {
                     "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
                     "Compress": True,
@@ -242,7 +242,7 @@ def test_static_website_stack() -> None:
     template.has_resource_properties(
         "AWS::Route53::RecordSet",
         {
-            "Name": "subdomain.example.com.",
+            "Name": "example.com.",
             "Type": "A",
             "AliasTarget": {
                 "DNSName": {
