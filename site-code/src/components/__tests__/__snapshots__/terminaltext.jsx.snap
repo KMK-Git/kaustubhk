@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TerminalPage renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "color": "#006fb8",
+    }
+  }
+>
+  'Design Applications' 'Secure Applications' 'Develop Applications' 'Save Money' 'Develop Automation' 'Cloud Native'
+</div>
+`;

@@ -1,0 +1,587 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TerminalPage renders correctly 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "background": "linear-gradient(45deg, #57003f 0%,#f57453 100%)",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
+        "height": "100%",
+        "left": 0,
+        "position": "fixed",
+        "top": 0,
+        "width": "100%",
+        "zIndex": -1,
+      }
+    }
+  />,
+  <div
+    style={
+      Object {
+        "fontFamily": "Ubuntu",
+        "height": "calc(20vh + 400px)",
+        "width": "calc(10vw + 600px)",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "boxShadow": "2px 4px 10px rgba(0,0,0,.5)",
+          "height": "400px",
+          "marginBottom": "10vh",
+          "marginLeft": "5vw",
+          "marginRight": "5vw",
+          "marginTop": "10vh",
+          "width": "600px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "background": "linear-gradient(#504b45 0%,#3c3b37 100%)",
+            "borderTopLeftRadius": "6px",
+            "borderTopRightRadius": "6px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "height": "25px",
+            "padding": "0 8px",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-uzwyma{width:12px;height:12px;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;border-radius:100%;padding:0;font-size:7px;text-shadow:0px 1px 0px rgba(255,255,255,0.2);box-shadow:0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;border:none;margin-right:4px;background:#f25d2b;background:linear-gradient(#f37458 0%, #de4c12 100%);-webkit-background-clip:padding-box;background-clip:padding-box;}.css-uzwyma:hover{cursor:pointer;}.css-uzwyma:focus{outline:none;}",
+              }
+            }
+            data-emotion="css uzwyma"
+          />
+          <button
+            className="css-uzwyma"
+          >
+            ✕
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-xpuijx{width:12px;height:12px;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;border-radius:100%;padding:0;font-size:7px;background:linear-gradient(#7d7871 0%, #595953 100%);text-shadow:0px 1px 0px rgba(255,255,255,0.2);box-shadow:0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;border:none;margin-right:4px;}.css-xpuijx:hover{cursor:pointer;}.css-xpuijx:focus{outline:none;}",
+              }
+            }
+            data-emotion="css xpuijx"
+          />
+          <button
+            className="css-xpuijx"
+          >
+            ─
+          </button>
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-xpuijx{width:12px;height:12px;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;border-radius:100%;padding:0;font-size:7px;background:linear-gradient(#7d7871 0%, #595953 100%);text-shadow:0px 1px 0px rgba(255,255,255,0.2);box-shadow:0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;border:none;margin-right:4px;}.css-xpuijx:hover{cursor:pointer;}.css-xpuijx:focus{outline:none;}",
+              }
+            }
+            data-emotion="css xpuijx"
+          />
+          <button
+            className="css-xpuijx"
+          >
+            ◻
+          </button>
+        </div>
+        <p
+          style={
+            Object {
+              "color": "#d5d0ce",
+              "fontSize": "12px",
+              "lineHeight": "14px",
+              "marginLeft": "4px",
+            }
+          }
+        >
+          kaustubh@kaustubhk.com:~
+        </p>
+      </div>
+      <div
+        style={
+          Object {
+            "background": "rgba(56, 4, 40, .9)",
+            "fontFamily": "Ubuntu mono",
+            "marginTop": "-1px",
+            "minHeight": "375px",
+            "paddingTop": "2px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          Hi, Welcome to my website!
+        </div>
+        <br />
+        <span
+          style={
+            Object {
+              "display": "inline-block",
+              "marginTop": "2px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#87d441",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            kaustubh@kaustubhk.com:
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#6d85a9",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            ~
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            $
+          </div>
+           
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            cat aboutme.txt
+          </div>
+        </span>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          Hi, I'm Kaustubh Khavnekar, a Senior Platform Engineer working for Quantiphi. I work primarily on developing architectures capable of solving a given use case.
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          You can read my blogs at 
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://blogs.kaustubhk.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            https://blogs.kaustubhk.com
+          </a>
+        </div>
+        <span
+          style={
+            Object {
+              "display": "inline-block",
+              "marginTop": "2px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#87d441",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            kaustubh@kaustubhk.com:
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#6d85a9",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            ~
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            $
+          </div>
+           
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            ls skills/
+          </div>
+        </span>
+        <div
+          style={
+            Object {
+              "color": "#006fb8",
+            }
+          }
+        >
+          'Design Applications' 'Secure Applications' 'Develop Applications' 'Save Money' 'Develop Automation' 'Cloud Native'
+        </div>
+        <span
+          style={
+            Object {
+              "display": "inline-block",
+              "marginTop": "2px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#87d441",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            kaustubh@kaustubhk.com:
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#6d85a9",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            ~
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            $
+          </div>
+           
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            ls -1 certifications/
+          </div>
+        </span>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://www.credly.com/badges/785576dd-bce0-4987-a631-3a2d2b74499c/public_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            AWS Certified DevOps Engineer - Professional
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://www.credly.com/badges/03b7e0d8-3638-4294-9216-74442fc511cb/public_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            CKAD: Certified Kubernetes Application Developer
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://www.credly.com/badges/d5c02aa2-a3ef-47d3-93cf-fa6f3753a992/public_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            HashiCorp Certified: Terrafom Associate
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://www.credly.com/badges/210938c4-48c2-47f0-817c-8d784f07c099/public_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            AWS Certified Solutions Architect - Associate
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://www.credly.com/badges/5ab7b3ff-3e67-489a-b04e-b864f898ac0e/public_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            AWS Certified Developer - Associate
+          </a>
+        </div>
+        <span
+          style={
+            Object {
+              "display": "inline-block",
+              "marginTop": "2px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "#87d441",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            kaustubh@kaustubhk.com:
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#6d85a9",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            ~
+          </div>
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            $
+          </div>
+           
+          <div
+            style={
+              Object {
+                "color": "#dddddd",
+                "display": "inline-block",
+                "whiteSpace": "normal",
+                "wordBreak": "break-all",
+                "wordWrap": "break-word",
+              }
+            }
+          >
+            cat design-credits.txt
+          </div>
+        </span>
+        <div
+          style={
+            Object {
+              "color": "#dddddd",
+              "display": "inline-block",
+            }
+          }
+        >
+          <style
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": ".css-79mumg{color:#ffffff;}",
+              }
+            }
+            data-emotion="css 79mumg"
+          />
+          <a
+            className="css-79mumg"
+            href="https://codepen.io/codypearce/pen/JmOQXB"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            https://codepen.io/codypearce/pen/JmOQXB
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

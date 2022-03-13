@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TerminalPage renders correctly 1`] = `
+<span
+  style={
+    Object {
+      "display": "inline-block",
+      "marginTop": "2px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "color": "#87d441",
+        "display": "inline-block",
+        "whiteSpace": "normal",
+        "wordBreak": "break-all",
+        "wordWrap": "break-word",
+      }
+    }
+  >
+    kaustubh@kaustubhk.com:
+  </div>
+  <div
+    style={
+      Object {
+        "color": "#6d85a9",
+        "display": "inline-block",
+        "whiteSpace": "normal",
+        "wordBreak": "break-all",
+        "wordWrap": "break-word",
+      }
+    }
+  >
+    ~
+  </div>
+  <div
+    style={
+      Object {
+        "color": "#dddddd",
+        "display": "inline-block",
+        "whiteSpace": "normal",
+        "wordBreak": "break-all",
+        "wordWrap": "break-word",
+      }
+    }
+  >
+    $
+  </div>
+   
+  <div
+    style={
+      Object {
+        "color": "#dddddd",
+        "display": "inline-block",
+        "whiteSpace": "normal",
+        "wordBreak": "break-all",
+        "wordWrap": "break-word",
+      }
+    }
+  >
+    cat aboutme.txt
+  </div>
+</span>
+`;
