@@ -20,7 +20,7 @@ def test_pipeline_stack() -> None:
             app,
             "StaticWebsiteDeployStage",
             hostedzone_domain_name="kaustubhk.com",
-            website_subdomain="blogs",
+            website_subdomain="",
             env=cdk.Environment(account="123456789012", region="ap-south-1"),
         ),
         env=cdk.Environment(account="123456789012", region="ap-south-1"),
@@ -166,7 +166,7 @@ def test_pipeline_stack() -> None:
                         "Effect": "Allow",
                         "Resource": {
                             "Fn::GetAtt": [
-                                "PipelineSourceKMKGitkaustubhkblogsCodePipelineActionRole46D89A7A",
+                                "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleFA5B98DB",
                                 "Arn",
                             ]
                         },
@@ -290,16 +290,16 @@ def test_pipeline_stack() -> None:
                                 "ConnectionArn": {
                                     "Ref": "SsmParameterValuecodestarconnectionarnC96584B6F00A464EAD1953AFF4B05118Parameter"
                                 },
-                                "FullRepositoryId": "KMK-Git/kaustubhk-blogs",
+                                "FullRepositoryId": "KMK-Git/kaustubhk",
                                 "BranchName": "main",
                             },
-                            "Name": "KMK-Git_kaustubhk-blogs",
+                            "Name": "KMK-Git_kaustubhk",
                             "OutputArtifacts": [
-                                {"Name": "KMK_Git_kaustubhk_blogs_Source"}
+                                {"Name": "KMK_Git_kaustubhk_Source"}
                             ],
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineSourceKMKGitkaustubhkblogsCodePipelineActionRole46D89A7A",
+                                    "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleFA5B98DB",
                                     "Arn",
                                 ]
                             },
@@ -323,7 +323,7 @@ def test_pipeline_stack() -> None:
                                 },
                             },
                             "InputArtifacts": [
-                                {"Name": "KMK_Git_kaustubhk_blogs_Source"}
+                                {"Name": "KMK_Git_kaustubhk_Source"}
                             ],
                             "Name": "Synth",
                             "OutputArtifacts": [{"Name": "Synth_Output"}],
@@ -671,10 +671,10 @@ def test_pipeline_stack() -> None:
                 ],
                 "Version": "2012-10-17",
             },
-            "PolicyName": "PipelineSourceKMKGitkaustubhkblogsCodePipelineActionRoleDefaultPolicy82688263",
+            "PolicyName": "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleDefaultPolicyC34AEB37",
             "Roles": [
                 {
-                    "Ref": "PipelineSourceKMKGitkaustubhkblogsCodePipelineActionRole46D89A7A"
+                    "Ref": "PipelineSourceKMKGitkaustubhkCodePipelineActionRoleFA5B98DB"
                 }
             ],
         },
