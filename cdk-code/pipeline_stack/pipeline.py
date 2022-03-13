@@ -32,7 +32,7 @@ class PipelineStack(Stack):
         """
         super().__init__(scope, construct_id, **kwargs)
         source = pipelines.CodePipelineSource.connection(
-            "KMK-Git/kaustubhk-blogs",
+            "KMK-Git/kaustubhk",
             "main",
             connection_arn=ssm.StringParameter.value_for_string_parameter(
                 self,
