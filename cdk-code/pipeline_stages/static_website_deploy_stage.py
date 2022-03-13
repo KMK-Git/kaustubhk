@@ -12,6 +12,7 @@ class StaticWebsiteDeployStage(cdk.Stage):
     Create infrastructure required for a static application in AWS.
     """
 
+    # pylint: disable=too-many-arguments
     def __init__(
         self,
         scope: Construct,

@@ -23,6 +23,8 @@ class StaticWebsiteStack(Stack):
     Create infrastructure required for a static application in AWS.
     """
 
+    # pylint: disable=too-many-arguments
+    # pylint: disable=too-many-locals
     def __init__(
         self,
         scope: Construct,
