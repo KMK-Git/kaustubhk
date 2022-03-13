@@ -11,7 +11,7 @@ app = cdk.App()
 
 PipelineStack(
     app,
-    "PipelineStack",
+    "PipelineStackMain",
     static_website_deploy_stage=StaticWebsiteDeployStage(
         app,
         "StaticWebsiteDeployStage",

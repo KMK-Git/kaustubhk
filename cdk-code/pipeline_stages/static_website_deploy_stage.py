@@ -30,7 +30,7 @@ class StaticWebsiteDeployStage(cdk.Stage):
         super().__init__(scope, construct_id, **kwargs)
         self.stack = StaticWebsiteStack(
             self,
-            "StaticWebsiteStack",
+            "StaticWebsiteStackMain",
             hostedzone_domain_name=hostedzone_domain_name,
             website_subdomain=website_subdomain,
         )
