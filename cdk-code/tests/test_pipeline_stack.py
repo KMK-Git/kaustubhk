@@ -513,7 +513,7 @@ def test_pipeline_stack() -> None:
                                 "Version": "1",
                             },
                             "Configuration": {
-                                "StackName": "StaticWebsiteDeployStage-StaticWebsiteStack",
+                                "StackName": "StaticWebsiteDeployStage-StaticWebsiteStackMain",
                                 "Capabilities": "CAPABILITY_NAMED_IAM,CAPABILITY_AUTO_EXPAND",
                                 "RoleArn": {
                                     "Fn::Join": [
@@ -527,10 +527,10 @@ def test_pipeline_stack() -> None:
                                 },
                                 "ActionMode": "CHANGE_SET_REPLACE",
                                 "ChangeSetName": "PipelineChange",
-                                "TemplatePath": "Synth_Output::assembly-StaticWebsiteDeployStage/StaticWebsiteDeployStageStaticWebsiteStack733D8CA8.template.json",
+                                "TemplatePath": "Synth_Output::assembly-StaticWebsiteDeployStage/StaticWebsiteDeployStageStaticWebsiteStackMain4ECB8A5A.template.json",
                             },
                             "InputArtifacts": [{"Name": "Synth_Output"}],
-                            "Name": "StaticWebsiteStack.Prepare",
+                            "Name": "StaticWebsiteStackMain.Prepare",
                             "RoleArn": {
                                 "Fn::Join": [
                                     "",
@@ -551,11 +551,11 @@ def test_pipeline_stack() -> None:
                                 "Version": "1",
                             },
                             "Configuration": {
-                                "StackName": "StaticWebsiteDeployStage-StaticWebsiteStack",
+                                "StackName": "StaticWebsiteDeployStage-StaticWebsiteStackMain",
                                 "ActionMode": "CHANGE_SET_EXECUTE",
                                 "ChangeSetName": "PipelineChange",
                             },
-                            "Name": "StaticWebsiteStack.Deploy",
+                            "Name": "StaticWebsiteStackMain.Deploy",
                             "RoleArn": {
                                 "Fn::Join": [
                                     "",
