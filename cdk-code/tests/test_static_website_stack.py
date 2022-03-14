@@ -282,6 +282,46 @@ def test_static_website_stack() -> None:
         },
     )
     template.has_resource_properties(
+        "AWS::Route53::RecordSet",
+        {
+            "Name": "example.com.",
+            "Type": "AAAA",
+            "AliasTarget": {
+                "DNSName": {
+                    "Fn::GetAtt": ["WebsiteDistribution75DCDA0B", "DomainName"]
+                },
+                "HostedZoneId": {
+                    "Fn::FindInMap": [
+                        "AWSCloudFrontPartitionHostedZoneIdMap",
+                        {"Ref": "AWS::Partition"},
+                        "zoneId",
+                    ]
+                },
+            },
+            "HostedZoneId": "DUMMY",
+        },
+    )
+    template.has_resource_properties(
+        "AWS::Route53::RecordSet",
+        {
+            "Name": "www.example.com.",
+            "Type": "AAAA",
+            "AliasTarget": {
+                "DNSName": {
+                    "Fn::GetAtt": ["WebsiteDistribution75DCDA0B", "DomainName"]
+                },
+                "HostedZoneId": {
+                    "Fn::FindInMap": [
+                        "AWSCloudFrontPartitionHostedZoneIdMap",
+                        {"Ref": "AWS::Partition"},
+                        "zoneId",
+                    ]
+                },
+            },
+            "HostedZoneId": "DUMMY",
+        },
+    )
+    template.has_resource_properties(
         "AWS::Lambda::LayerVersion",
         {
             "Content": {

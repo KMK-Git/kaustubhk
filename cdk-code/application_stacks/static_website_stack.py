@@ -116,10 +116,28 @@ class StaticWebsiteStack(Stack):
                 targets.CloudFrontTarget(distribution)
             ),
         )
+        route53.AaaaRecord(
+            self,
+            "DomainRecordAAAA",
+            zone=hosted_zone,
+            record_name=website_domain,
+            target=route53.RecordTarget.from_alias(
+                targets.CloudFrontTarget(distribution)
+            ),
+        )
         for index, alternative_domain in enumerate(alternative_domains):
             route53.ARecord(
                 self,
                 f"DomainRecord{index}",
+                zone=hosted_zone,
+                record_name=alternative_domain,
+                target=route53.RecordTarget.from_alias(
+                    targets.CloudFrontTarget(distribution)
+                ),
+            )
+            route53.AaaaRecord(
+                self,
+                f"DomainRecordAAAA{index}",
                 zone=hosted_zone,
                 record_name=alternative_domain,
                 target=route53.RecordTarget.from_alias(
