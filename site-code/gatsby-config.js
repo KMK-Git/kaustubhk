@@ -26,6 +26,11 @@ module.exports = {
       policy: [{ userAgent: '*', allow: '/' }],
     },
   }, {
+    resolve: 'gatsby-plugin-canonical-urls',
+    options: {
+      siteUrl: 'https://kaustubhk.com',
+    },
+  }, {
     resolve: 'gatsby-plugin-sitemap',
     options: {
       serialize: (page, { resolvePagePath }) => ({
