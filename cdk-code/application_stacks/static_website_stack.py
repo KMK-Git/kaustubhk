@@ -97,7 +97,9 @@ class StaticWebsiteStack(Stack):
             security_headers_behavior=cloudfront.ResponseSecurityHeadersBehavior(
                 content_security_policy=cloudfront.ResponseHeadersContentSecurityPolicy(
                     content_security_policy="default-src 'self'; img-src https://*;"
-                    " child-src 'none'; object-src 'none'; require-trusted-types-for 'script';",
+                    "child-src 'none'; object-src 'none'; script-src 'unsafe-inline' 'self';"
+                    "style-src 'unsafe-inline' 'self'; font-src 'self' data:;"
+                    "require-trusted-types-for 'script';",
                     override=True,
                 ),
                 content_type_options=cloudfront.ResponseHeadersContentTypeOptions(
