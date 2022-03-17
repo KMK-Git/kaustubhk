@@ -182,6 +182,38 @@ def test_static_website_stack() -> None:
         {"CloudFrontOriginAccessIdentityConfig": {}},
     )
     template.has_resource_properties(
+        "AWS::CloudFront::ResponseHeadersPolicy",
+        {
+            "ResponseHeadersPolicyConfig": {
+                "Comment": "Security Headers",
+                "Name": "kaustubhk-SecurityHeadersPolicy",
+                "SecurityHeadersConfig": {
+                    "ContentSecurityPolicy": {
+                        "ContentSecurityPolicy": "default-src 'self'; img-src https://*; child-src 'none'; object-src 'none'; require-trusted-types-for 'script';",
+                        "Override": True,
+                    },
+                    "ContentTypeOptions": {"Override": True},
+                    "FrameOptions": {"FrameOption": "DENY", "Override": True},
+                    "ReferrerPolicy": {
+                        "Override": True,
+                        "ReferrerPolicy": "no-referrer",
+                    },
+                    "StrictTransportSecurity": {
+                        "AccessControlMaxAgeSec": 63072000,
+                        "IncludeSubdomains": True,
+                        "Override": True,
+                        "Preload": True,
+                    },
+                    "XSSProtection": {
+                        "ModeBlock": True,
+                        "Override": True,
+                        "Protection": True,
+                    },
+                },
+            }
+        },
+    )
+    template.has_resource_properties(
         "AWS::CloudFront::Distribution",
         {
             "DistributionConfig": {
@@ -200,6 +232,7 @@ def test_static_website_stack() -> None:
                             },
                         }
                     ],
+                    "ResponseHeadersPolicyId": {"Ref": "ResponseHeadersPolicy13DBF9E0"},
                     "ViewerProtocolPolicy": "redirect-to-https",
                 },
                 "Enabled": True,
