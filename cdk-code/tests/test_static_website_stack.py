@@ -218,6 +218,13 @@ def test_static_website_stack() -> None:
         {
             "DistributionConfig": {
                 "Aliases": ["example.com", "www.example.com"],
+                "CustomErrorResponses": [
+                    {
+                        "ErrorCode": 403,
+                        "ResponseCode": 404,
+                        "ResponsePagePath": "404.html",
+                    }
+                ],
                 "DefaultCacheBehavior": {
                     "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
                     "Compress": True,

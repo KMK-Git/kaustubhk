@@ -131,6 +131,13 @@ class StaticWebsiteStack(Stack):
             self,
             "WebsiteDistribution",
             certificate=certificate,
+            error_responses=[
+                cloudfront.ErrorResponse(
+                    http_status=403,
+                    response_http_status=404,
+                    response_page_path="404.html",
+                )
+            ],
             default_behavior=cloudfront.BehaviorOptions(
                 origin=origins.S3Origin(website_bucket),
                 function_associations=[
