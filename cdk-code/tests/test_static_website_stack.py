@@ -189,7 +189,7 @@ def test_static_website_stack() -> None:
                 "Name": "kaustubhk-SecurityHeadersPolicy",
                 "SecurityHeadersConfig": {
                     "ContentSecurityPolicy": {
-                        "ContentSecurityPolicy": "default-src 'self'; img-src https://*; child-src 'none'; object-src 'none'; script-src 'unsafe-inline' 'self'; style-src 'unsafe-inline' 'self'; font-src 'self' data:; require-trusted-types-for 'script';",
+                        "ContentSecurityPolicy": "default-src 'self'; img-src https://*; child-src 'none'; object-src 'none'; script-src 'unsafe-inline' 'self'; style-src 'unsafe-inline' 'self'; font-src 'self' data:;",
                         "Override": True,
                     },
                     "ContentTypeOptions": {"Override": True},
