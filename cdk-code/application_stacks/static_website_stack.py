@@ -135,7 +135,7 @@ class StaticWebsiteStack(Stack):
                 cloudfront.ErrorResponse(
                     http_status=403,
                     response_http_status=404,
-                    response_page_path="404.html",
+                    response_page_path="/404.html",
                 )
             ],
             default_behavior=cloudfront.BehaviorOptions(

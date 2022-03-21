@@ -222,7 +222,7 @@ def test_static_website_stack() -> None:
                     {
                         "ErrorCode": 403,
                         "ResponseCode": 404,
-                        "ResponsePagePath": "404.html",
+                        "ResponsePagePath": "/404.html",
                     }
                 ],
                 "DefaultCacheBehavior": {
