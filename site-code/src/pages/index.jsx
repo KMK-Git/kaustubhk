@@ -37,6 +37,11 @@ function IndexPage() {
       </TerminalText>
       <TerminalPrompt user={user} location={location} text="ls -1 certifications/" />
       <TerminalText isFolder={false}>
+        <StyledAnchor href="https://www.credly.com/badges/fb5b4fc7-87cb-4732-a81c-4c52821ad3bb/public_url" target="_blank" rel="noopener noreferrer">
+          AWS Certified Solutions Architect - Professional
+        </StyledAnchor>
+      </TerminalText>
+      <TerminalText isFolder={false}>
         <StyledAnchor href="https://www.credly.com/badges/785576dd-bce0-4987-a631-3a2d2b74499c/public_url" target="_blank" rel="noopener noreferrer">
           AWS Certified DevOps Engineer - Professional
         </StyledAnchor>
