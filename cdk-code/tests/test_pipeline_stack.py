@@ -176,60 +176,7 @@ def test_pipeline_stack() -> None:
                         "Action": "sts:AssumeRole",
                         "Effect": "Allow",
                         "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelineBuildSynthCodePipelineActionRole4E7A6C97",
-                                "Arn",
-                            ]
-                        },
-                    },
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF",
-                                "Arn",
-                            ]
-                        },
-                    },
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelineAssetsFileAsset1CodePipelineActionRoleC0EC649A",
-                                "Arn",
-                            ]
-                        },
-                    },
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelineAssetsFileAsset2CodePipelineActionRole06965A59",
-                                "Arn",
-                            ]
-                        },
-                    },
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelineAssetsFileAsset3CodePipelineActionRole99229BA9",
-                                "Arn",
-                            ]
-                        },
-                    },
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelineAssetsFileAsset4CodePipelineActionRole492E1DB6",
-                                "Arn",
-                            ]
+                            "Fn::GetAtt": ["PipelineCodeBuildActionRole226DB0CB", "Arn"]
                         },
                     },
                     {
@@ -276,6 +223,12 @@ def test_pipeline_stack() -> None:
     template.has_resource_properties(
         "AWS::CodePipeline::Pipeline",
         {
+            "ArtifactStore": {
+                "Location": {"Ref": "PipelineArtifactsBucketAEA9A052"},
+                "Type": "S3",
+            },
+            "PipelineType": "V1",
+            "RestartExecutionOnUpdate": True,
             "RoleArn": {"Fn::GetAtt": ["PipelineRoleB27FAA37", "Arn"]},
             "Stages": [
                 {
@@ -320,13 +273,14 @@ def test_pipeline_stack() -> None:
                                 "ProjectName": {
                                     "Ref": "PipelineBuildSynthCdkBuildProject6BEFA8E6"
                                 },
+                                "EnvironmentVariables": '[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"22fc5eaa13808ea6f8415167c37918d08190889a013cd637ffe326ff6adb68a1"}]',
                             },
                             "InputArtifacts": [{"Name": "KMK_Git_kaustubhk_Source"}],
                             "Name": "Synth",
                             "OutputArtifacts": [{"Name": "Synth_Output"}],
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineBuildSynthCodePipelineActionRole4E7A6C97",
+                                    "PipelineCodeBuildActionRole226DB0CB",
                                     "Arn",
                                 ]
                             },
@@ -348,13 +302,13 @@ def test_pipeline_stack() -> None:
                                 "ProjectName": {
                                     "Ref": "PipelineUpdatePipelineSelfMutationDAA41400"
                                 },
-                                "EnvironmentVariables": '[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"396986ca0b4b81f6476ea51f35e3ab52c5c0f97cf91d2a264f001fb0c88846be"}]',
+                                "EnvironmentVariables": '[{"name":"_PROJECT_CONFIG_HASH","type":"PLAINTEXT","value":"167eef1378d6e6ad8c4c8da3461f900d6e066cd0916052ee812a8d94b87ad38c"}]',
                             },
                             "InputArtifacts": [{"Name": "Synth_Output"}],
                             "Name": "SelfMutate",
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF",
+                                    "PipelineCodeBuildActionRole226DB0CB",
                                     "Arn",
                                 ]
                             },
@@ -381,7 +335,7 @@ def test_pipeline_stack() -> None:
                             "Name": "FileAsset1",
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineAssetsFileAsset1CodePipelineActionRoleC0EC649A",
+                                    "PipelineCodeBuildActionRole226DB0CB",
                                     "Arn",
                                 ]
                             },
@@ -403,7 +357,7 @@ def test_pipeline_stack() -> None:
                             "Name": "FileAsset2",
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineAssetsFileAsset2CodePipelineActionRole06965A59",
+                                    "PipelineCodeBuildActionRole226DB0CB",
                                     "Arn",
                                 ]
                             },
@@ -425,7 +379,7 @@ def test_pipeline_stack() -> None:
                             "Name": "FileAsset3",
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineAssetsFileAsset3CodePipelineActionRole99229BA9",
+                                    "PipelineCodeBuildActionRole226DB0CB",
                                     "Arn",
                                 ]
                             },
@@ -447,7 +401,7 @@ def test_pipeline_stack() -> None:
                             "Name": "FileAsset4",
                             "RoleArn": {
                                 "Fn::GetAtt": [
-                                    "PipelineAssetsFileAsset4CodePipelineActionRole492E1DB6",
+                                    "PipelineCodeBuildActionRole226DB0CB",
                                     "Arn",
                                 ]
                             },
@@ -569,11 +523,6 @@ def test_pipeline_stack() -> None:
                     "Name": "StaticWebsiteDeployStage",
                 },
             ],
-            "ArtifactStore": {
-                "Location": {"Ref": "PipelineArtifactsBucketAEA9A052"},
-                "Type": "S3",
-            },
-            "RestartExecutionOnUpdate": True,
             "Tags": [{"Key": "SECURITY_CHECK", "Value": "ALLOW_APPROVE"}],
         },
     )
@@ -810,7 +759,7 @@ def test_pipeline_stack() -> None:
             "Artifacts": {"Type": "CODEPIPELINE"},
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:5.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -871,45 +820,7 @@ def test_pipeline_stack() -> None:
                                 "Arn",
                             ]
                         },
-                    }
-                ],
-                "Version": "2012-10-17",
-            },
-            "PolicyName": "PipelineBuildSynthCodePipelineActionRoleDefaultPolicy92C90290",
-            "Roles": [{"Ref": "PipelineBuildSynthCodePipelineActionRole4E7A6C97"}],
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Role",
-        {
-            "AssumeRolePolicyDocument": {
-                "Statement": [
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Principal": {
-                            "AWS": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        "arn:",
-                                        {"Ref": "AWS::Partition"},
-                                        ":iam::123456789012:root",
-                                    ],
-                                ]
-                            }
-                        },
-                    }
-                ],
-                "Version": "2012-10-17",
-            }
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Policy",
-        {
-            "PolicyDocument": {
-                "Statement": [
+                    },
                     {
                         "Action": [
                             "codebuild:BatchGetBuilds",
@@ -923,49 +834,7 @@ def test_pipeline_stack() -> None:
                                 "Arn",
                             ]
                         },
-                    }
-                ],
-                "Version": "2012-10-17",
-            },
-            "PolicyName": "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleDefaultPolicyE626265B",
-            "Roles": [
-                {
-                    "Ref": "PipelineUpdatePipelineSelfMutateCodePipelineActionRoleD6D4E5CF"
-                }
-            ],
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Role",
-        {
-            "AssumeRolePolicyDocument": {
-                "Statement": [
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Principal": {
-                            "AWS": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        "arn:",
-                                        {"Ref": "AWS::Partition"},
-                                        ":iam::123456789012:root",
-                                    ],
-                                ]
-                            }
-                        },
-                    }
-                ],
-                "Version": "2012-10-17",
-            }
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Policy",
-        {
-            "PolicyDocument": {
-                "Statement": [
+                    },
                     {
                         "Action": [
                             "codebuild:BatchGetBuilds",
@@ -976,47 +845,7 @@ def test_pipeline_stack() -> None:
                         "Resource": {
                             "Fn::GetAtt": ["PipelineAssetsFileAsset185A67CB4", "Arn"]
                         },
-                    }
-                ],
-                "Version": "2012-10-17",
-            },
-            "PolicyName": "PipelineAssetsFileAsset1CodePipelineActionRoleDefaultPolicy5F0BE7E8",
-            "Roles": [
-                {"Ref": "PipelineAssetsFileAsset1CodePipelineActionRoleC0EC649A"}
-            ],
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Role",
-        {
-            "AssumeRolePolicyDocument": {
-                "Statement": [
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Principal": {
-                            "AWS": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        "arn:",
-                                        {"Ref": "AWS::Partition"},
-                                        ":iam::123456789012:root",
-                                    ],
-                                ]
-                            }
-                        },
-                    }
-                ],
-                "Version": "2012-10-17",
-            }
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Policy",
-        {
-            "PolicyDocument": {
-                "Statement": [
+                    },
                     {
                         "Action": [
                             "codebuild:BatchGetBuilds",
@@ -1027,47 +856,7 @@ def test_pipeline_stack() -> None:
                         "Resource": {
                             "Fn::GetAtt": ["PipelineAssetsFileAsset24D2D639B", "Arn"]
                         },
-                    }
-                ],
-                "Version": "2012-10-17",
-            },
-            "PolicyName": "PipelineAssetsFileAsset2CodePipelineActionRoleDefaultPolicy2399F4BC",
-            "Roles": [
-                {"Ref": "PipelineAssetsFileAsset2CodePipelineActionRole06965A59"}
-            ],
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Role",
-        {
-            "AssumeRolePolicyDocument": {
-                "Statement": [
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Principal": {
-                            "AWS": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        "arn:",
-                                        {"Ref": "AWS::Partition"},
-                                        ":iam::123456789012:root",
-                                    ],
-                                ]
-                            }
-                        },
-                    }
-                ],
-                "Version": "2012-10-17",
-            }
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Policy",
-        {
-            "PolicyDocument": {
-                "Statement": [
+                    },
                     {
                         "Action": [
                             "codebuild:BatchGetBuilds",
@@ -1078,47 +867,7 @@ def test_pipeline_stack() -> None:
                         "Resource": {
                             "Fn::GetAtt": ["PipelineAssetsFileAsset3FE71B523", "Arn"]
                         },
-                    }
-                ],
-                "Version": "2012-10-17",
-            },
-            "PolicyName": "PipelineAssetsFileAsset3CodePipelineActionRoleDefaultPolicy5C399808",
-            "Roles": [
-                {"Ref": "PipelineAssetsFileAsset3CodePipelineActionRole99229BA9"}
-            ],
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Role",
-        {
-            "AssumeRolePolicyDocument": {
-                "Statement": [
-                    {
-                        "Action": "sts:AssumeRole",
-                        "Effect": "Allow",
-                        "Principal": {
-                            "AWS": {
-                                "Fn::Join": [
-                                    "",
-                                    [
-                                        "arn:",
-                                        {"Ref": "AWS::Partition"},
-                                        ":iam::123456789012:root",
-                                    ],
-                                ]
-                            }
-                        },
-                    }
-                ],
-                "Version": "2012-10-17",
-            }
-        },
-    )
-    template.has_resource_properties(
-        "AWS::IAM::Policy",
-        {
-            "PolicyDocument": {
-                "Statement": [
+                    },
                     {
                         "Action": [
                             "codebuild:BatchGetBuilds",
@@ -1129,14 +878,12 @@ def test_pipeline_stack() -> None:
                         "Resource": {
                             "Fn::GetAtt": ["PipelineAssetsFileAsset474303B7D", "Arn"]
                         },
-                    }
+                    },
                 ],
                 "Version": "2012-10-17",
             },
-            "PolicyName": "PipelineAssetsFileAsset4CodePipelineActionRoleDefaultPolicy7F51ED2C",
-            "Roles": [
-                {"Ref": "PipelineAssetsFileAsset4CodePipelineActionRole492E1DB6"}
-            ],
+            "PolicyName": "PipelineCodeBuildActionRoleDefaultPolicy1D62A6FE",
+            "Roles": [{"Ref": "PipelineCodeBuildActionRole226DB0CB"}],
         },
     )
     template.has_resource_properties(
@@ -1166,33 +913,133 @@ def test_pipeline_stack() -> None:
         },
     )
     template.has_resource_properties(
-        "AWS::IAM::Policy",
+        "AWS::IAM::Role",
         {
-            "PolicyDocument": {
+            "AssumeRolePolicyDocument": {
                 "Statement": [
                     {
-                        "Action": [
-                            "codebuild:BatchGetBuilds",
-                            "codebuild:StartBuild",
-                            "codebuild:StopBuild",
-                        ],
+                        "Action": "sts:AssumeRole",
                         "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelinePipelinesSecurityCheckCDKSecurityCheck1D09275A",
-                                "Arn",
-                            ]
+                        "Principal": {
+                            "AWS": {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        "arn:",
+                                        {"Ref": "AWS::Partition"},
+                                        ":iam::123456789012:root",
+                                    ],
+                                ]
+                            }
                         },
                     }
                 ],
                 "Version": "2012-10-17",
-            },
-            "PolicyName": "PipelineStaticWebsiteDeployStageCheckPermissionsCheckCodePipelineActionRoleDefaultPolicy541F68EC",
-            "Roles": [
-                {
-                    "Ref": "PipelineStaticWebsiteDeployStageCheckPermissionsCheckCodePipelineActionRole1B886EC9"
-                }
-            ],
+            }
+        },
+    )
+    template.has_resource_properties(
+        "AWS::IAM::Role",
+        {
+            "AssumeRolePolicyDocument": {
+                "Statement": [
+                    {
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        "arn:",
+                                        {"Ref": "AWS::Partition"},
+                                        ":iam::123456789012:root",
+                                    ],
+                                ]
+                            }
+                        },
+                    }
+                ],
+                "Version": "2012-10-17",
+            }
+        },
+    )
+    template.has_resource_properties(
+        "AWS::IAM::Role",
+        {
+            "AssumeRolePolicyDocument": {
+                "Statement": [
+                    {
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        "arn:",
+                                        {"Ref": "AWS::Partition"},
+                                        ":iam::123456789012:root",
+                                    ],
+                                ]
+                            }
+                        },
+                    }
+                ],
+                "Version": "2012-10-17",
+            }
+        },
+    )
+    template.has_resource_properties(
+        "AWS::IAM::Role",
+        {
+            "AssumeRolePolicyDocument": {
+                "Statement": [
+                    {
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        "arn:",
+                                        {"Ref": "AWS::Partition"},
+                                        ":iam::123456789012:root",
+                                    ],
+                                ]
+                            }
+                        },
+                    }
+                ],
+                "Version": "2012-10-17",
+            }
+        },
+    )
+    template.has_resource_properties(
+        "AWS::IAM::Role",
+        {
+            "AssumeRolePolicyDocument": {
+                "Statement": [
+                    {
+                        "Action": "sts:AssumeRole",
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        "arn:",
+                                        {"Ref": "AWS::Partition"},
+                                        ":iam::123456789012:root",
+                                    ],
+                                ]
+                            }
+                        },
+                    }
+                ],
+                "Version": "2012-10-17",
+            }
         },
     )
     template.has_resource_properties(
@@ -1356,7 +1203,7 @@ def test_pipeline_stack() -> None:
             "Artifacts": {"Type": "CODEPIPELINE"},
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:5.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -1459,11 +1306,9 @@ def test_pipeline_stack() -> None:
                     {
                         "Action": "sts:AssumeRole",
                         "Effect": "Allow",
-                        "Resource": [
-                            {
-                                "Fn::Sub": "arn:${AWS::Partition}:iam::123456789012:role/cdk-hnb659fds-file-publishing-role-123456789012-ap-south-1"
-                            }
-                        ],
+                        "Resource": {
+                            "Fn::Sub": "arn:${AWS::Partition}:iam::123456789012:role/cdk-hnb659fds-file-publishing-role-123456789012-ap-south-1"
+                        },
                     },
                     {
                         "Action": ["s3:GetObject*", "s3:GetBucket*", "s3:List*"],
@@ -1499,7 +1344,7 @@ def test_pipeline_stack() -> None:
             "Artifacts": {"Type": "CODEPIPELINE"},
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:5.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -1519,7 +1364,7 @@ def test_pipeline_stack() -> None:
             "Artifacts": {"Type": "CODEPIPELINE"},
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:5.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -1539,7 +1384,7 @@ def test_pipeline_stack() -> None:
             "Artifacts": {"Type": "CODEPIPELINE"},
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:5.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -1559,7 +1404,7 @@ def test_pipeline_stack() -> None:
             "Artifacts": {"Type": "CODEPIPELINE"},
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:5.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -1634,16 +1479,16 @@ def test_pipeline_stack() -> None:
         {
             "Code": {
                 "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "3e601c673b9351492da8ea7c9879cf894caab8f928531c1bfbf4848cde785498.zip",
+                "S3Key": "8f5a1090fc6972a51e904601772d6525545251717845601746ed5307556368a8.zip",
             },
+            "Handler": "index.handler",
             "Role": {
                 "Fn::GetAtt": [
                     "PipelinePipelinesSecurityCheckCDKPipelinesAutoApproveServiceRoleC48D6A44",
                     "Arn",
                 ]
             },
-            "Handler": "index.handler",
-            "Runtime": "nodejs12.x",
+            "Runtime": "nodejs18.x",
             "Timeout": 300,
         },
     )
@@ -1741,12 +1586,28 @@ def test_pipeline_stack() -> None:
                     {
                         "Action": "lambda:InvokeFunction",
                         "Effect": "Allow",
-                        "Resource": {
-                            "Fn::GetAtt": [
-                                "PipelinePipelinesSecurityCheckCDKPipelinesAutoApprove438244C8",
-                                "Arn",
-                            ]
-                        },
+                        "Resource": [
+                            {
+                                "Fn::GetAtt": [
+                                    "PipelinePipelinesSecurityCheckCDKPipelinesAutoApprove438244C8",
+                                    "Arn",
+                                ]
+                            },
+                            {
+                                "Fn::Join": [
+                                    "",
+                                    [
+                                        {
+                                            "Fn::GetAtt": [
+                                                "PipelinePipelinesSecurityCheckCDKPipelinesAutoApprove438244C8",
+                                                "Arn",
+                                            ]
+                                        },
+                                        ":*",
+                                    ],
+                                ]
+                            },
+                        ],
                     },
                     {
                         "Action": ["s3:GetObject*", "s3:GetBucket*", "s3:List*"],
@@ -1782,9 +1643,11 @@ def test_pipeline_stack() -> None:
         "AWS::CodeBuild::Project",
         {
             "Artifacts": {"Type": "NO_ARTIFACTS"},
+            "Cache": {"Type": "NO_CACHE"},
+            "EncryptionKey": "alias/aws/s3",
             "Environment": {
                 "ComputeType": "BUILD_GENERAL1_SMALL",
-                "Image": "aws/codebuild/standard:1.0",
+                "Image": "aws/codebuild/standard:7.0",
                 "ImagePullCredentialsType": "CODEBUILD",
                 "PrivilegedMode": False,
                 "Type": "LINUX_CONTAINER",
@@ -1804,13 +1667,11 @@ def test_pipeline_stack() -> None:
                             {
                                 "Ref": "PipelinePipelinesSecurityCheckCDKPipelinesAutoApprove438244C8"
                             },
-                            ' --invocation-type Event --payload \\"$payload\\" lambda.out; export MESSAGE=\\"No security-impacting changes detected.\\"; else [ -z \\"${NOTIFICATION_ARN}\\" ] || aws sns publish --topic-arn $NOTIFICATION_ARN --subject \\"$NOTIFICATION_SUBJECT\\" --message \\"An upcoming change would broaden security changes in $PIPELINE_NAME.\\nReview and approve the changes in CodePipeline to proceed with the deployment.\\n\\nReview the changes in CodeBuild:\\n\\n$LINK\\n\\nApprove the changes in CodePipeline (stage $STAGE_NAME, action $ACTION_NAME):\\n\\n$PIPELINE_LINK\\"; export MESSAGE=\\"Deployment would make security-impacting changes. Click the link below to inspect them, then click Approve if all changes are expected.\\"; fi"\n      ]\n    }\n  },\n  "env": {\n    "exported-variables": [\n      "LINK",\n      "MESSAGE"\n    ]\n  }\n}',
+                            ' --invocation-type Event --cli-binary-format raw-in-base64-out --payload \\"$payload\\" lambda.out; export MESSAGE=\\"No security-impacting changes detected.\\"; else [ -z \\"${NOTIFICATION_ARN}\\" ] || aws sns publish --topic-arn $NOTIFICATION_ARN --subject \\"$NOTIFICATION_SUBJECT\\" --message \\"An upcoming change would broaden security changes in $PIPELINE_NAME.\\nReview and approve the changes in CodePipeline to proceed with the deployment.\\n\\nReview the changes in CodeBuild:\\n\\n$LINK\\n\\nApprove the changes in CodePipeline (stage $STAGE_NAME, action $ACTION_NAME):\\n\\n$PIPELINE_LINK\\"; export MESSAGE=\\"Deployment would make security-impacting changes. Click the link below to inspect them, then click Approve if all changes are expected.\\"; fi"\n      ]\n    }\n  },\n  "env": {\n    "exported-variables": [\n      "LINK",\n      "MESSAGE"\n    ]\n  }\n}',
                         ],
                     ]
                 },
                 "Type": "NO_SOURCE",
             },
-            "Cache": {"Type": "NO_CACHE"},
-            "EncryptionKey": "alias/aws/s3",
         },
     )

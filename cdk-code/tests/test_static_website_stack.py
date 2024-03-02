@@ -139,16 +139,16 @@ def test_static_website_stack() -> None:
         {
             "Code": {
                 "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "4d3f21fe611d8ebfd4f1f69754b7f986fed4ecf648d4fafe941cd81ede6cf60c.zip",
+                "S3Key": "b073cebcf4d61fb152a30f5a5e57a94df7f980a549fdf1a79a0b18c5750522d8.zip",
             },
+            "Handler": "index.certificateRequestHandler",
             "Role": {
                 "Fn::GetAtt": [
                     "SiteCertificateCertificateRequestorFunctionServiceRole645E891D",
                     "Arn",
                 ]
             },
-            "Handler": "index.certificateRequestHandler",
-            "Runtime": "nodejs12.x",
+            "Runtime": "nodejs18.x",
             "Timeout": 900,
         },
     )
@@ -366,7 +366,7 @@ def test_static_website_stack() -> None:
         {
             "Content": {
                 "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "391a62714930dde9689f73f04bec0cd78494b9d9b7167446e54c6c939bbbb6b4.zip",
+                "S3Key": "3322b7049fb0ed2b7cbb644a2ada8d1116ff80c32dca89e6ada846b5de26f961.zip",
             },
             "Description": "/opt/awscli/aws",
         },
@@ -501,17 +501,22 @@ def test_static_website_stack() -> None:
         {
             "Code": {
                 "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "f98b78092dcdd31f5e6d47489beb5f804d4835ef86a8085d0a2053cb9ae711da.zip",
+                "S3Key": "2d56e153cac88d3e0c2f842e8e6f6783b8725bf91f95e0673b4725448a56e96d.zip",
             },
+            "Environment": {
+                "Variables": {
+                    "AWS_CA_BUNDLE": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
+                }
+            },
+            "Handler": "index.handler",
+            "Layers": [{"Ref": "S3DeploymentAwsCliLayer8AAFE44F"}],
             "Role": {
                 "Fn::GetAtt": [
                     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
                     "Arn",
                 ]
             },
-            "Handler": "index.handler",
-            "Layers": [{"Ref": "S3DeploymentAwsCliLayer8AAFE44F"}],
-            "Runtime": "python3.7",
+            "Runtime": "python3.9",
             "Timeout": 900,
         },
     )
