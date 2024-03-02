@@ -3,7 +3,7 @@
 exports[`TerminalPage renders correctly 1`] = `
 <div
   style={
-    Object {
+    {
       "color": "#006fb8",
     }
   }

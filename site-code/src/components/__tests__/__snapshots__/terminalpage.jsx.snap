@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TerminalPage renders correctly 1`] = `
-Array [
+[
   <div
     style={
-      Object {
+      {
         "background": "linear-gradient(45deg, #57003f 0%,#f57453 100%)",
         "backgroundPosition": "center",
         "backgroundRepeat": "no-repeat",
@@ -19,7 +19,7 @@ Array [
   />,
   <div
     style={
-      Object {
+      {
         "fontFamily": "Ubuntu",
         "height": "calc(20vh + 400px)",
         "width": "calc(10vw + 600px)",
@@ -28,7 +28,7 @@ Array [
   >
     <div
       style={
-        Object {
+        {
           "boxShadow": "2px 4px 10px rgba(0,0,0,.5)",
           "height": "400px",
           "marginBottom": "10vh",
@@ -41,7 +41,7 @@ Array [
     >
       <div
         style={
-          Object {
+          {
             "alignItems": "center",
             "background": "linear-gradient(#504b45 0%,#3c3b37 100%)",
             "borderTopLeftRadius": "6px",
@@ -56,7 +56,7 @@ Array [
       >
         <div
           style={
-            Object {
+            {
               "alignItems": "center",
               "display": "flex",
             }
@@ -64,7 +64,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-uzwyma{width:12px;height:12px;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;border-radius:100%;padding:0;font-size:7px;text-shadow:0px 1px 0px rgba(255,255,255,0.2);box-shadow:0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;border:none;margin-right:4px;background:#f25d2b;background:linear-gradient(#f37458 0%, #de4c12 100%);-webkit-background-clip:padding-box;background-clip:padding-box;}.css-uzwyma:hover{cursor:pointer;}.css-uzwyma:focus{outline:none;}",
               }
             }
@@ -77,7 +77,7 @@ Array [
           </button>
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-xpuijx{width:12px;height:12px;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;border-radius:100%;padding:0;font-size:7px;background:linear-gradient(#7d7871 0%, #595953 100%);text-shadow:0px 1px 0px rgba(255,255,255,0.2);box-shadow:0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;border:none;margin-right:4px;}.css-xpuijx:hover{cursor:pointer;}.css-xpuijx:focus{outline:none;}",
               }
             }
@@ -90,7 +90,7 @@ Array [
           </button>
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-xpuijx{width:12px;height:12px;box-sizing:border-box;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;border-radius:100%;padding:0;font-size:7px;background:linear-gradient(#7d7871 0%, #595953 100%);text-shadow:0px 1px 0px rgba(255,255,255,0.2);box-shadow:0px 0px 1px 0px #41403A,0px 1px 1px 0px #474642;border:none;margin-right:4px;}.css-xpuijx:hover{cursor:pointer;}.css-xpuijx:focus{outline:none;}",
               }
             }
@@ -104,7 +104,7 @@ Array [
         </div>
         <p
           style={
-            Object {
+            {
               "color": "#d5d0ce",
               "fontSize": "12px",
               "lineHeight": "14px",
@@ -117,7 +117,7 @@ Array [
       </div>
       <div
         style={
-          Object {
+          {
             "background": "rgba(56, 4, 40, .9)",
             "fontFamily": "Ubuntu mono",
             "marginTop": "-1px",
@@ -128,7 +128,7 @@ Array [
       >
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -139,7 +139,7 @@ Array [
         <br />
         <span
           style={
-            Object {
+            {
               "display": "inline-block",
               "marginTop": "2px",
             }
@@ -147,7 +147,7 @@ Array [
         >
           <div
             style={
-              Object {
+              {
                 "color": "#87d441",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -160,7 +160,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#6d85a9",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -173,7 +173,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -187,7 +187,7 @@ Array [
            
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -201,7 +201,7 @@ Array [
         </span>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -211,7 +211,7 @@ Array [
         </div>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -220,7 +220,7 @@ Array [
           You can read my blogs at 
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
@@ -237,7 +237,7 @@ Array [
         </div>
         <span
           style={
-            Object {
+            {
               "display": "inline-block",
               "marginTop": "2px",
             }
@@ -245,7 +245,7 @@ Array [
         >
           <div
             style={
-              Object {
+              {
                 "color": "#87d441",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -258,7 +258,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#6d85a9",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -271,7 +271,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -285,7 +285,7 @@ Array [
            
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -299,7 +299,7 @@ Array [
         </span>
         <div
           style={
-            Object {
+            {
               "color": "#006fb8",
             }
           }
@@ -308,7 +308,7 @@ Array [
         </div>
         <span
           style={
-            Object {
+            {
               "display": "inline-block",
               "marginTop": "2px",
             }
@@ -316,7 +316,7 @@ Array [
         >
           <div
             style={
-              Object {
+              {
                 "color": "#87d441",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -329,7 +329,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#6d85a9",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -342,7 +342,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -356,7 +356,7 @@ Array [
            
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -370,7 +370,7 @@ Array [
         </span>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -378,7 +378,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
@@ -395,7 +395,7 @@ Array [
         </div>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -403,7 +403,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
@@ -420,7 +420,7 @@ Array [
         </div>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -428,7 +428,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
@@ -445,7 +445,7 @@ Array [
         </div>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -453,7 +453,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
@@ -470,7 +470,7 @@ Array [
         </div>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -478,7 +478,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
@@ -495,7 +495,7 @@ Array [
         </div>
         <span
           style={
-            Object {
+            {
               "display": "inline-block",
               "marginTop": "2px",
             }
@@ -503,7 +503,7 @@ Array [
         >
           <div
             style={
-              Object {
+              {
                 "color": "#87d441",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -516,7 +516,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#6d85a9",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -529,7 +529,7 @@ Array [
           </div>
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -543,7 +543,7 @@ Array [
            
           <div
             style={
-              Object {
+              {
                 "color": "#dddddd",
                 "display": "inline-block",
                 "whiteSpace": "normal",
@@ -557,7 +557,7 @@ Array [
         </span>
         <div
           style={
-            Object {
+            {
               "color": "#dddddd",
               "display": "inline-block",
             }
@@ -565,7 +565,7 @@ Array [
         >
           <style
             dangerouslySetInnerHTML={
-              Object {
+              {
                 "__html": ".css-79mumg{color:#ffffff;}",
               }
             }
