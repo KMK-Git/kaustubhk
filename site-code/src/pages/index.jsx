@@ -48,7 +48,7 @@ function IndexPage() {
       </TerminalText>
       <TerminalText isFolder={false}>
         <StyledAnchor href="https://www.credly.com/badges/359da3c9-5404-4aae-9fa4-192b41bb5b03/public_url" target="_blank" rel="noopener noreferrer">
-          AWS Certified Data Analytics – Specialty
+          AWS Certified Data Analytics - Specialty
         </StyledAnchor>
       </TerminalText>
       <TerminalPrompt user={user} location={location} text="cat design-credits.txt" />
