@@ -15,7 +15,7 @@ function IndexPage() {
       <br />
       <TerminalPrompt user={user} location={location} text="cat aboutme.txt" />
       <TerminalText isFolder={false}>
-        Hi, I&#39;m Kaustubh Khavnekar, a Senior Platform Engineer working for Quantiphi.
+        Hi, I&#39;m Kaustubh Khavnekar, an Associate Architect working for Quantiphi.
         I work primarily on developing architectures capable of solving a given use case.
       </TerminalText>
       <TerminalText isFolder={false}>
@@ -47,23 +47,8 @@ function IndexPage() {
         </StyledAnchor>
       </TerminalText>
       <TerminalText isFolder={false}>
-        <StyledAnchor href="https://www.credly.com/badges/03b7e0d8-3638-4294-9216-74442fc511cb/public_url" target="_blank" rel="noopener noreferrer">
-          CKAD: Certified Kubernetes Application Developer
-        </StyledAnchor>
-      </TerminalText>
-      <TerminalText isFolder={false}>
-        <StyledAnchor href="https://www.credly.com/badges/d5c02aa2-a3ef-47d3-93cf-fa6f3753a992/public_url" target="_blank" rel="noopener noreferrer">
-          HashiCorp Certified: Terrafom Associate
-        </StyledAnchor>
-      </TerminalText>
-      <TerminalText isFolder={false}>
-        <StyledAnchor href="https://www.credly.com/badges/210938c4-48c2-47f0-817c-8d784f07c099/public_url" target="_blank" rel="noopener noreferrer">
-          AWS Certified Solutions Architect - Associate
-        </StyledAnchor>
-      </TerminalText>
-      <TerminalText isFolder={false}>
-        <StyledAnchor href="https://www.credly.com/badges/5ab7b3ff-3e67-489a-b04e-b864f898ac0e/public_url" target="_blank" rel="noopener noreferrer">
-          AWS Certified Developer - Associate
+        <StyledAnchor href="https://www.credly.com/badges/359da3c9-5404-4aae-9fa4-192b41bb5b03/public_url" target="_blank" rel="noopener noreferrer">
+          AWS Certified Data Analytics – Specialty
         </StyledAnchor>
       </TerminalText>
       <TerminalPrompt user={user} location={location} text="cat design-credits.txt" />
