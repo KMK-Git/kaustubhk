@@ -15,8 +15,11 @@ function IndexPage() {
       <br />
       <TerminalPrompt user={user} location={location} text="cat aboutme.txt" />
       <TerminalText isFolder={false}>
-        Hi, I&#39;m Kaustubh Khavnekar, an Associate Architect working for Quantiphi.
-        I work primarily on developing architectures capable of solving a given use case.
+        Hi, I&#39;m Kaustubh Khavnekar. I work as an Associate Architect for Platform at&nbsp;
+        <StyledAnchor href="https://quantiphi.com/" target="_blank" rel="noopener noreferrer">Quantiphi</StyledAnchor>
+        , an AI and data engineering company.
+        I design and implement cloud based architectures, focusing on operational excellence,
+        security, reliability, performance efficiency, and cost optimization.
       </TerminalText>
       <TerminalText isFolder={false}>
         You can read my blogs at&nbsp;
