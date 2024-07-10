@@ -26,8 +26,7 @@ function IndexPage() {
         <StyledAnchor href="https://blogs.kaustubhk.com" target="_blank" rel="noopener noreferrer">https://blogs.kaustubhk.com</StyledAnchor>
       </TerminalText>
       <TerminalText isFolder={false}>
-        Contact me or find out more about the website&nbsp;
-        <StyledAnchor href="https://github.com/KMK-Git/KMK-Git/blob/main/README.md" target="_blank" rel="noopener noreferrer">here</StyledAnchor>
+        Contact me on <StyledAnchor href="https://www.linkedin.com/in/kaustubhkhavnekar" target="_blank" rel="noopener noreferrer">LinkedIn</StyledAnchor> or <StyledAnchor href="https://github.com/KMK-Git/KMK-Git/blob/main/README.md" target="_blank" rel="noopener noreferrer">GitHub</StyledAnchor>&nbsp;
       </TerminalText>
       <TerminalPrompt user={user} location={location} text="ls skills/" />
       <TerminalText isFolder>
