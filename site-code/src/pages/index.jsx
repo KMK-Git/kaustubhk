@@ -26,8 +26,15 @@ function IndexPage() {
         <StyledAnchor href="https://blogs.kaustubhk.com" target="_blank" rel="noopener noreferrer">https://blogs.kaustubhk.com</StyledAnchor>
       </TerminalText>
       <TerminalText isFolder={false}>
-        Contact me on <StyledAnchor href="https://www.linkedin.com/in/kaustubhkhavnekar" target="_blank" rel="noopener noreferrer">LinkedIn</StyledAnchor> or <StyledAnchor href="https://github.com/KMK-Git/KMK-Git/blob/main/README.md" target="_blank" rel="noopener noreferrer">GitHub</StyledAnchor>&nbsp;
+        Contact me on
+        {' '}
+        <StyledAnchor href="https://www.linkedin.com/in/kaustubhkhavnekar" target="_blank" rel="noopener noreferrer">LinkedIn</StyledAnchor>
+        {' '}
+        or
+        {' '}
+        <StyledAnchor href="https://github.com/KMK-Git/KMK-Git/blob/main/README.md" target="_blank" rel="noopener noreferrer">GitHub</StyledAnchor>
       </TerminalText>
+      <br />
       <TerminalPrompt user={user} location={location} text="ls skills/" />
       <TerminalText isFolder>
         &#39;Design Applications&#39;
