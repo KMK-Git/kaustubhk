@@ -1,6 +1,7 @@
 """
 Test CDK Pipelines Stack.
 """
+
 # pylint: disable=line-too-long,too-many-lines
 import aws_cdk as cdk
 from aws_cdk import assertions

@@ -1,6 +1,7 @@
 """
 Test Static Website Stack.
 """
+
 # pylint: disable=line-too-long
 import aws_cdk as cdk
 from aws_cdk import assertions
