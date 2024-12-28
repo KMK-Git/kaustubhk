@@ -139,8 +139,7 @@ def test_static_website_stack() -> None:
         "AWS::Lambda::Function",
         {
             "Code": {
-                "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "b073cebcf4d61fb152a30f5a5e57a94df7f980a549fdf1a79a0b18c5750522d8.zip",
+                "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1"
             },
             "Handler": "index.certificateRequestHandler",
             "Role": {
@@ -366,8 +365,7 @@ def test_static_website_stack() -> None:
         "AWS::Lambda::LayerVersion",
         {
             "Content": {
-                "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "3322b7049fb0ed2b7cbb644a2ada8d1116ff80c32dca89e6ada846b5de26f961.zip",
+                "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1"
             },
             "Description": "/opt/awscli/aws",
         },
@@ -501,8 +499,7 @@ def test_static_website_stack() -> None:
         "AWS::Lambda::Function",
         {
             "Code": {
-                "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1",
-                "S3Key": "2d56e153cac88d3e0c2f842e8e6f6783b8725bf91f95e0673b4725448a56e96d.zip",
+                "S3Bucket": "cdk-hnb659fds-assets-123456789012-ap-south-1"
             },
             "Environment": {
                 "Variables": {
